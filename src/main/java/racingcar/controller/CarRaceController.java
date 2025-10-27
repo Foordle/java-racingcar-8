@@ -5,7 +5,9 @@ import racingcar.view.InputView;
 import racingcar.model.CarRaceService;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class CarRaceController { // model과 view를 이어주는 곳
@@ -38,12 +40,20 @@ public class CarRaceController { // model과 view를 이어주는 곳
 
         String[] namesArray = carNamesInput.split(",");
         List<RacingCar> carList = new ArrayList<>();
+        Set<String> uniqueNames = new HashSet<>();
 
         for (String name : namesArray) {
             String trimmedName = name.trim();
             if (trimmedName.isEmpty() || trimmedName.length() > 5) { // 이름 길이 검사 등 추가
                 throw new IllegalArgumentException("이름의 길이는 1~5사이만 허용됩니다!");
             }
+
+
+            if (uniqueNames.contains(trimmedName)) {
+                throw new IllegalArgumentException("중복된 자동차 이름 '" + trimmedName + "'이(가) 존재합니다.");
+            }
+            uniqueNames.add(trimmedName);
+
             carList.add(new RacingCar(trimmedName));
         }
         return carList;
