@@ -1,5 +1,6 @@
-package racingcar.model;
+package racingcar.service;
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.model.RacingCar;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -2,7 +2,7 @@ package racingcar.controller;
 import racingcar.model.RacingCar;
 import racingcar.view.OutputView;
 import racingcar.view.InputView;
-import racingcar.model.CarRaceService;
+import racingcar.service.CarRaceService;
 
 import java.util.ArrayList;
 import java.util.HashSet;
