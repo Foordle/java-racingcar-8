@@ -1,10 +1,10 @@
-package racingcar.Model;
+package racingcar.model;
 
-public class racingCar {
+public class RacingCar {
     private String name;
     private int position;
 
-    public racingCar(String name) {
+    public RacingCar(String name) {
         this.name = name;
         this.position = 0;
     };
@@ -17,5 +17,12 @@ public class racingCar {
     }
     public int getPosition(){
         return this.position;
+    }
+    public String getPositionString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < this.position; i++) {
+            sb.append("-");
+        }
+        return sb.toString();
     }
 }
